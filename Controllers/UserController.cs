@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Server.Service;
 
 namespace Server.Controllers
 {
     public class UserController : Controller
     {
+        UserService userService = new UserService();
         // GET: UserController
         public ActionResult Index()
         {
@@ -12,8 +14,20 @@ namespace Server.Controllers
         }
 
         // GET: UserController/Validate/5
-        public ActionResult Validate(int id)
+        public ActionResult Validate(IFormCollection collection)
         {
+            string email = collection["email"];
+            string password = collection["password"];
+
+            try
+            {
+
+            } 
+            catch
+            {
+                
+            }
+
             return View();
         }
 
